@@ -44,7 +44,7 @@ jobs:
           echo '{
             "AWSEBDockerrunVersion": "1",
             "Image": {
-              "Name": "${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}",
+              "Name": "${{ steps.login-ecr.outputs.registry }}/nextjs-portfolio:${{ github.sha }}",
               "Update": "true"
             },
             "Ports": [

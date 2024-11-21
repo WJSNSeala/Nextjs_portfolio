@@ -6,8 +6,8 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2
-  EB_APP_NAME: nextjs-portfolio
-  EB_ENV_NAME: Nextjs-portfolio-env
+  EB_APP_NAME: nextjs-portfolio-docker
+  EB_ENV_NAME: Nextjs-portfolio-docker-env
   DEPLOY_PACKAGE_NAME: docker-deploy-${{ github.sha }}
 
 jobs:

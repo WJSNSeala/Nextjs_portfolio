@@ -6,6 +6,8 @@
 .pnp.*
 .yarn/*
 
+.yarnrc.yml
+
 # testing
 /coverage
 

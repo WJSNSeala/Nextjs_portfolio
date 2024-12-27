@@ -15,4 +15,8 @@ export const REACT_DOCS_COMPONENTS_LINKS: LinkData[] = [
     href: "/profiler",
     slug: "React Profiler",
   },
+  {
+    href: "/suspense",
+    slug: "React Suspense",
+  }
 ];

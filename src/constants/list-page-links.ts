@@ -3,6 +3,13 @@ export type LinkData = {
   slug: string;
 };
 
+export const HTML_DOCS_LINKS: LinkData[] = [
+  {
+    href: "/dialog",
+    slug: "Dialog",
+  },
+] as const;
+
 export const REACT_DOCS_LINKS: LinkData[] = [
   {
     href: "/components",

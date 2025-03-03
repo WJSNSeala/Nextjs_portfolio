@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.11",
     "@vanilla-extract/css": "^1.16.0",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
@@ -25,6 +26,5 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "typescript": "^5"
-  },
-  "packageManager": "yarn@4.5.1"
+  }
 }

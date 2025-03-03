@@ -1,19 +1,9 @@
 "use client";
 
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
+import { useQuery } from "@tanstack/react-query";
 
 export default function ReactQueryOverViewExamplePage() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Example />
-    </QueryClientProvider>
-  );
+  return <Example />;
 }
 
 function Example() {

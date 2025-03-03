@@ -11,7 +11,18 @@ export default function ReactQueryPage() {
       <p>It is used to fetch data from the server and cache it locally.</p>
 
       <h2>React Query Official Docs</h2>
-      <Link href={`${reactQueryPageBaseLikn}/overview`}>Overview</Link>
+      <h3>Getting Started</h3>
+      <Link href={`${reactQueryPageBaseLikn}/getting-started/overview`}>
+        Overview
+      </Link>
+      <Link href={`${reactQueryPageBaseLikn}/getting-started/quick-start`}>
+        Quick Start
+      </Link>
+
+      <h3>Guides & Concepts</h3>
+      <Link href={`${reactQueryPageBaseLikn}/guides-and-concepts/queries`}>
+        Queries
+      </Link>
     </LinkLayout>
   );
 }

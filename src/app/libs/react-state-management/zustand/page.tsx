@@ -4,9 +4,8 @@ import Link from "next/link";
 export default function LibsPracticePage() {
   return (
     <LinkLayout>
-      <Link href="/libs/three-js">Three.js library react version practice</Link>
-      <Link href="/libs/react-state-management">
-        React state management practice
+      <Link href="/libs/react-state-management/zustand/get-start">
+        zustand official docs quick start implementation
       </Link>
     </LinkLayout>
   );

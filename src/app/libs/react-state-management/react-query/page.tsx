@@ -23,6 +23,9 @@ export default function ReactQueryPage() {
       <Link href={`${reactQueryPageBaseLikn}/guides-and-concepts/queries`}>
         Queries
       </Link>
+      <Link href={`${reactQueryPageBaseLikn}/guides-and-concepts/mutations`}>
+        Mutations
+      </Link>
     </LinkLayout>
   );
 }

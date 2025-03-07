@@ -1,30 +1,7 @@
 "use client";
 
+import { fetchErrorData, fetchSuccessData } from "@/libs/react-query/test-data";
 import { useQuery } from "@tanstack/react-query";
-
-interface TestValue {
-  message: string;
-  timestamp: string;
-  randomvalue: number;
-}
-
-const fetchSuccessData = async (): Promise<TestValue> => {
-  const delay = 500 + Math.random() * 1000;
-  await new Promise((resolve) => setTimeout(resolve, delay));
-
-  return {
-    message: "Success",
-    timestamp: new Date().toISOString(),
-    randomvalue: Math.floor(Math.random() * 100),
-  };
-};
-
-const fetchErrorData = async (): Promise<TestValue> => {
-  const delay = 500 + Math.random() * 1000;
-  await new Promise((resolve) => setTimeout(resolve, delay));
-
-  throw new Error("의도적으로 발생시킨 에러입니다.");
-};
 
 function SuccessQueryComponent() {
   const { data, isLoading, error, status } = useQuery({

@@ -41,11 +41,7 @@ function MutationOptimisticUpdateExample() {
       console.log("rollback count");
       setCount((prev) => prev - 1);
     },
-    onSuccess: (data, variables, context) => {
-      // Boom baby!
-      console.log("on success function inner");
-    },
-    onSettled: (data, error, variables, context) => {
+    onSettled: () => {
       // Error or success... doesn't matter!
       console.log("on settled function inner");
     },
@@ -61,6 +57,83 @@ function MutationOptimisticUpdateExample() {
   );
 }
 
+function MutationCallbackAwaitExample() {
+  const mutation = useMutation({
+    mutationFn: fetchSuccessData,
+    onSuccess: async () => {
+      console.log("I'm first!");
+    },
+    onSettled: async () => {
+      console.log("I'm second!");
+    },
+  });
+
+  return (
+    <div>
+      <button onClick={() => mutation.mutate()}>Trigger Mutation</button>
+      <h5>{mutation.status}</h5>
+      {mutation.isSuccess && <h5>{mutation.data.message}</h5>}
+    </div>
+  );
+}
+
+function MutateFunctionCallbackExample() {
+  // 먼저 실행됨
+  const mutation = useMutation({
+    mutationFn: fetchSuccessData,
+    onSuccess: () => console.log("1. useMutation onSuccess"),
+    onError: () => console.log("1. useMutation onError"),
+    onSettled: () => console.log("1. useMutation onSettled"),
+  });
+
+  // 나중에 실행됨
+
+  return (
+    <div>
+      <button
+        onClick={() =>
+          mutation.mutate(undefined, {
+            onSuccess: () => console.log("2. mutate onSuccess"),
+            onError: () => console.log("2. mutate onError"),
+            onSettled: () => console.log("2. mutate onSettled"),
+          })
+        }
+      >
+        Trigger Mutation
+      </button>
+      <h5>{mutation.status}</h5>
+      {mutation.isSuccess && <h5>{mutation.data.message}</h5>}
+    </div>
+  );
+}
+
+function ConsecutiveMutationExample() {
+  const mutation = useMutation({
+    mutationFn: fetchSuccessData,
+    onSuccess: () => console.log("1. useMutation onSuccess"),
+    onError: () => console.log("1. useMutation onError"),
+    onSettled: () => console.log("1. useMutation onSettled"),
+  });
+
+  const handleClick = () => {
+    const test = [1, 2, 3];
+
+    test.forEach((item) => {
+      mutation.mutate(undefined, {
+        onSuccess: () => console.log(`2. mutate onSuccess ${item}`),
+      });
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Trigger Mutation</button>
+      <h5>{mutation.status}</h5>
+      {mutation.isSuccess && <h5>{mutation.data.message}</h5>}
+    </div>
+  );
+}
+
 export default function MutationsExamplePage() {
   return (
     <div>
@@ -69,8 +142,17 @@ export default function MutationsExamplePage() {
       <h2>Mutation State Reset Example</h2>
       <MutationStateResetExample />
 
-      <h2>Mutaion handy state functions</h2>
+      <h2>Mutaion Optimistic update and rollback example</h2>
       <MutationOptimisticUpdateExample />
+
+      <h2>Mutation callback async/await</h2>
+      <MutationCallbackAwaitExample />
+
+      <h2>Mutation callback execution order</h2>
+      <MutateFunctionCallbackExample />
+
+      <h2>Consecutive Mutation Example</h2>
+      <ConsecutiveMutationExample />
     </div>
   );
 }

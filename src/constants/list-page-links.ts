@@ -34,3 +34,14 @@ export const REACT_DOCS_HOOKS_LINKS: LinkData[] = [
     slug: "useActionState hook",
   },
 ];
+
+export const REACT_STATE_MANAGEMENT_LIBS_LINKS: LinkData[] = [
+  {
+    href: "/zustand",
+    slug: "Zustand",
+  },
+  {
+    href: "/react-query",
+    slug: "React Query",
+  },
+];

@@ -33,6 +33,10 @@ export const REACT_DOCS_HOOKS_LINKS: LinkData[] = [
     href: "/use-action-state",
     slug: "useActionState hook",
   },
+  {
+    href: "/use-context",
+    slug: "useContext hook",
+  }
 ];
 
 export const REACT_STATE_MANAGEMENT_LIBS_LINKS: LinkData[] = [

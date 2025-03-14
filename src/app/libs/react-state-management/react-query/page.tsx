@@ -26,6 +26,10 @@ export default function ReactQueryPage() {
       <Link href={`${reactQueryPageBaseLikn}/guides-and-concepts/mutations`}>
         Mutations
       </Link>
+
+      <Link href={`${reactQueryPageBaseLikn}/guides-and-concepts/infinite-queries`}>
+        Infinite Queries
+      </Link>
     </LinkLayout>
   );
 }

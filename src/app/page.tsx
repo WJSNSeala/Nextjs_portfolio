@@ -6,7 +6,9 @@ import {bioText, canvas, glassCard, heroContainer, nameText, titleText} from "@/
 import {animations, colorPalette} from "@/styles/design/design-system.css";
 
 // 키네틱 타이포그래피 애니메이션 컴포넌트
-const KineticTypography = ({ text }) => {
+const KineticTypography = ({ text }: {
+  text: string;
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const KineticTypography = ({ text }) => {
 
     const letters = container.querySelectorAll('span');
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { left, top, width, height } = container.getBoundingClientRect();
       const x = (e.clientX - left) / width;
       const y = (e.clientY - top) / height;

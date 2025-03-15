@@ -2,16 +2,30 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const mainFont = localFont({
+  src: [
+    {
+      path: '../../public/fonts/HangamePoker-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/HangamePoker-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/HangamePoker-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/HangamePoker-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+  ]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={mainFont.className}>
         {children}
       </body>
     </html>

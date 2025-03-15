@@ -6,7 +6,6 @@ import {animations, colorPalette, glass} from "@/styles/design/design-system.css
 export const heroContainer = style({
   position: 'relative',
   width: '100%',
-  height: '100vh',
   overflow: 'hidden',
   background: colorPalette.darkBg,
   display: 'flex',
@@ -15,6 +14,15 @@ export const heroContainer = style({
   alignItems: 'center',
   color: colorPalette.textPrimary,
   zIndex: 1,
+});
+
+export const heroGrid = style({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr',
+  gridTemplateRows: '1fr 1fr 1fr 1fr 1fr 1fr',
+  gap: '1rem',
+  width: '90%',
+  height: '90%',
 });
 
 export const canvas = style({
@@ -57,12 +65,10 @@ export const bioText = style({
 });
 
 export const glassCard = style({
-  background: glass.dark.background,
+  background: glass.light.background,
   backdropFilter: 'blur(10px)',
   border: glass.dark.border,
   borderRadius: '16px',
   padding: '2rem',
-  maxWidth: '800px',
-  width: '90%',
   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
 });

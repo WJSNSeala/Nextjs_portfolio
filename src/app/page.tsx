@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import {bioText, canvas, glassCard, heroContainer, nameText, titleText} from "@/styles/design/hero-page.css";
+import {bioText, canvas, glassCard, heroContainer, heroGrid, nameText, titleText} from "@/styles/design/hero-page.css";
 import {animations, colorPalette} from "@/styles/design/design-system.css";
 
 // 키네틱 타이포그래피 애니메이션 컴포넌트
@@ -141,45 +141,101 @@ const HeroSection = () => {
 
   return (
     <div className={heroContainer}>
-      <canvas ref={canvasRef} className={canvas} />
+      <canvas ref={canvasRef} className={canvas}/>
 
-      <div className={glassCard}>
-        <KineticTypography text="홍길동" />
-        <h2 className={titleText}>프론트엔드 개발자</h2>
-        <p className={bioText}>
-          사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
-          React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
-        </p>
+      <div className={heroGrid}>
 
-        <div style={{
-          display: 'flex',
-          gap: '16px',
-          justifyContent: 'center'
-        }}>
-          <button style={{
-            padding: '16px',
-            backgroundColor: colorPalette.accentBlue,
-            color: colorPalette.textPrimary,
-            borderRadius: '9999px',
-            fontWeight: 500,
-            border: 'none',
-            cursor: 'pointer',
-            transition: `all ${animations.duration.normal} ${animations.easing.easeOut}`
-          }}>
-            프로젝트 보기
-          </button>
-          <button style={{
-            padding: '16px',
-            backgroundColor: colorPalette.darkElevated,
-            color: colorPalette.textPrimary,
-            borderRadius: '9999px',
-            fontWeight: 500,
-            border: 'none',
-            cursor: 'pointer',
-            transition: `all ${animations.duration.normal} ${animations.easing.easeOut}`
-          }}>
-            연락하기
-          </button>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
+        </div>
+        <div className={glassCard}>
+          <KineticTypography text="홍길동"/>
+          <h2 className={titleText}>프론트엔드 개발자</h2>
+          <p className={bioText}>
+            사용자 중심적 사고와 최신 웹 기술을 활용하여 아름답고 기능적인 웹 경험을 만듭니다.
+            React, Next.js, Three.js 및 모던 CSS 기술을 활용한 창의적인 솔루션을 제공합니다.
+          </p>
+
+
         </div>
       </div>
     </div>

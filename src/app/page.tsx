@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import {bioText, canvas, glassCard, heroContainer, heroGrid, nameText, titleText} from "@/styles/design/hero-page.css";
-import {animations, colorPalette} from "@/styles/design/design-system.css";
 
 // 키네틱 타이포그래피 애니메이션 컴포넌트
 const KineticTypography = ({ text }: {

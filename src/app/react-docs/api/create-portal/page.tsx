@@ -1,20 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 function MyComponent() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div style={{ border: "2px solid black" }}>
-      {createPortal(
-        <p>This child is placed in the document body.</p>,
-        document.body
-      )}
+      {mounted &&
+        createPortal(
+          <p>This child is placed in the document body.</p>,
+          document.body
+        )}
       <p>This child is placed in the parent div.</p>
     </div>
   );
 }
 
 function TestPortalEventPropagation() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleParentClick = () => {
     console.log("Parent div clicked");
   };
@@ -26,12 +39,13 @@ function TestPortalEventPropagation() {
   return (
     <div onClick={handleParentClick} style={{ border: "2px solid red" }}>
       <p>This is a Propagation parent div.</p>
-      {createPortal(
-        <p onClick={handlePortalClinck}>
-          This child is placed in the document body.
-        </p>,
-        document.body
-      )}
+      {mounted &&
+        createPortal(
+          <p onClick={handlePortalClinck}>
+            This child is placed in the document body.
+          </p>,
+          window.document.body
+        )}
     </div>
   );
 }
@@ -66,6 +80,12 @@ function NoPortalModalExample() {
 }
 
 function PortalModalExample() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(true);
@@ -82,6 +102,7 @@ function PortalModalExample() {
         Open Modal with portal
       </button>
       {isOpen &&
+        mounted &&
         createPortal(
           <div style={{ border: "2px solid blue" }}>
             <p>This is a modal with portal.</p>

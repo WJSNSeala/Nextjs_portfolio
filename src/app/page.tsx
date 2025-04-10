@@ -17,8 +17,6 @@ import {
   project2GridItem,
   bio1GridItem,
   bio2GridItem,
-  blank1GridItem,
-  blank2GridItem,
   animTextRow1,
   animTextRow2,
   mouseFollow3DCharacter,
@@ -99,7 +97,7 @@ const HeroSection = () => {
       75,
       window.innerWidth / window.innerHeight,
       0.1,
-      1000,
+      1000
     );
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -129,11 +127,11 @@ const HeroSection = () => {
 
     particlesGeometry.setAttribute(
       "position",
-      new THREE.BufferAttribute(posArray, 3),
+      new THREE.BufferAttribute(posArray, 3)
     );
     particlesGeometry.setAttribute(
       "color",
-      new THREE.BufferAttribute(colorsArray, 3),
+      new THREE.BufferAttribute(colorsArray, 3)
     );
 
     const particlesMaterial = new THREE.PointsMaterial({
@@ -146,7 +144,7 @@ const HeroSection = () => {
 
     const particlesMesh = new THREE.Points(
       particlesGeometry,
-      particlesMaterial,
+      particlesMaterial
     );
     scene.add(particlesMesh);
 
@@ -230,12 +228,6 @@ const HeroSection = () => {
         <GlassCard className={mouseFollow3DCharacter}>
           <h3>마우스 따라다니는 캐릭터</h3>
         </GlassCard>
-
-        {/* 빈 영역 */}
-        <GlassCard></GlassCard>
-        <GlassCard></GlassCard>
-        <GlassCard></GlassCard>
-        <GlassCard></GlassCard>
       </div>
     </div>
   );
